@@ -21,8 +21,76 @@ body {
   font-size: 14px;
   line-height: 1.7;
 }
-/* logotyp */
+/* скидає крапочки біля списків */
+.list {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+/* скидає підкреслення в посиланнях */
+.link {
+  text-decoration: none;
+}
+/* скидає margin в заголовках і абзацах */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+/* Container */
+.container {
+  width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* Section */
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+/* Section product */
+.section.product {
+  padding-top: 0;
+  padding-bottom: 106px;
+}
+/* Section title */
+.section-title {
+  margin-bottom: 50px;
+  color: var(--title-text-color);
 
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+/* Header */
+header {
+  border-bottom: 1px solid #ececec;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 345px;
+}
+.header-nav {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  gap: 90px;
+}
+/* logotyp */
 .logo {
   color: var(--title-text-color);
 
@@ -35,17 +103,17 @@ body {
 .accent {
   color: var(--accent-color);
 }
-/* скидає крапочки біля списків */
-.list {
-  list-style: none;
-}
-/* скидає підкреслення в посиланнях */
-.link {
-  text-decoration: none;
-}
+
 /* site nav */
+.site-nav {
+  display: flex;
+  gap: 50px;
+}
 .site-nav .link,
 .auth-nav .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
   color: var(--title-text-color);
 
   font-weight: 500;
@@ -61,6 +129,10 @@ body {
   color: var(--accent-color);
 }
 /* auth nav */
+.auth-nav {
+  display: flex;
+  gap: 50px;
+}
 .auth-nav .link {
   color: var(--primary-text-color);
 }
@@ -70,25 +142,38 @@ body {
 }
 /* Hero */
 .hero {
+  padding-top: 200px;
+  padding-bottom: 200px;
   background-color: var(--secondary-background-color);
 }
+.hero-content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+  text-align: center;
+}
 .hero-title {
+  margin-top: 0;
+  margin-bottom: 30px;
+
   color: var(--primary-background-color);
 
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 .hero-button {
+  display: inline-block;
+  padding: 10px 32px;
   color: var(--primary-background-color);
   background-color: var(--accent-color);
 
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
+  text-align: center;
   letter-spacing: 0.06em;
   cursor: pointer;
 }
@@ -96,16 +181,7 @@ body {
 .hero-button:focus {
   background-color: #188ce8;
 }
-/* Section title */
-.section-title {
-  color: var(--title-text-color);
 
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.16;
-  letter-spacing: 0.03em;
-  text-align: center;
-}
 /*Приховує заголовок секції  */
 .visually-hidden {
   position: absolute;
@@ -120,7 +196,14 @@ body {
   margin: -1px;
 }
 /* Features */
+.features.list {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
 .features-title {
+  margin-top: 0;
+  margin-bottom: 10px;
   color: var(--title-text-color);
 
   font-weight: 700;
@@ -129,17 +212,33 @@ body {
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
+.features-text {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* Section Product */
+.product .list {
+  display: flex;
+  gap: 30px;
+}
 /* Section about Team */
-/* Питання щодо letter-spacing змінити до кожного елементу */
 .team {
   background-color: var(--team-background-color);
-  font-size: 16px;
-  letter-spacing: 0.03em;
+}
+.team.list {
+  display: flex;
+  gap: 30px;
+}
+.team-card-content {
+  padding: 30px 0;
 }
 .team-item {
   background-color: var(--primary-background-color);
+  text-align: center;
 }
 .team-title {
+  margin-bottom: 10px;
+
   color: var(--title-text-color);
 
   font-weight: 500;
@@ -153,9 +252,23 @@ body {
   letter-spacing: 0.03em;
 }
 /* Portfolio main */
-
+.portfolio-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.portfolio-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.portfolio .list {
+  margin-bottom: 50px;
+}
 /* portfolio button */
 .portfolio-button {
+  padding: 6px 22px;
+
   color: var(--title-text-color);
   background-color: var(--team-background-color);
 
@@ -170,8 +283,22 @@ body {
   color: var(--primary-background-color);
   background-color: var(--accent-color);
 }
+/* portfolio-card */
+.portfolio-card {
+  flex-basis: calc((100% - 60px) / 3);
+}
+.card-content {
+  padding: 20px 24px;
+  /* border-top: none;
+  border: 1px solid #eeeeee; */
+  border-right: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+}
 /* Portfolio title */
 .portfolio-title {
+  margin-bottom: 4px;
+
   color: var(--title-text-color);
 
   font-weight: 700;
@@ -187,6 +314,8 @@ body {
 }
 /* footer */
 .footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
   background-color: var(--secondary-background-color);
 }
 /* contacts in footer */
@@ -201,11 +330,17 @@ body {
 }
 /* map in footer */
 .footer-map {
+  display: inline-block;
   color: var(--primary-background-color);
   font-style: normal;
   letter-spacing: 0.03em;
 }
 /* logo in footer */
-.footer > .logo {
+.footer .logo {
+  display: inline-block;
+  margin-bottom: 20px;
   color: var(--primary-background-color);
+}
+.footer-item:not(:last-child) {
+  margin-bottom: 9px;
 }
